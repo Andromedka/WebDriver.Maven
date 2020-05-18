@@ -8,10 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Test1 {
     public static void main(String[] args) throws InterruptedException {
 
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
+
         WebDriver driver = new ChromeDriver();
 
 
         driver.get("https://sharelane.com/");
+
+        WebElement enterBtn = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[20]/td/p/a/b"));
+
+        enterBtn.click();
 
         WebElement singUp = driver.findElement(By.xpath("/html/body/center/table/tbody/tr[3]/td/table/tbody/tr/td[4]/a"));
 
